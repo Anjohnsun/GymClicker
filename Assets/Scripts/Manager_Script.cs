@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Script : MonoBehaviour
+public class Manager_Script : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,10 +14,5 @@ public class Script : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void WriteSmth()
-    {
-        //Debug.Log(number + name + trueFalse);
     }
 }
