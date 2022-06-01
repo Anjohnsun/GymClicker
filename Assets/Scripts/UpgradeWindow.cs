@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeWindow : MonoBehaviour
 {
@@ -8,8 +9,6 @@ public class UpgradeWindow : MonoBehaviour
     [SerializeField] private int _upgradeImprovement;
     [SerializeField] private int _levelRequired;
     [SerializeField] private int _improvementLevel;
-
-    [SerializeField] private GameObject _blockingMask;
     public UpgradeWindow(int upgradeCost, int upgradeImprovement, int levelRequired, int improvementLevel)
     {
         _upgradeCost = upgradeCost;
@@ -28,9 +27,7 @@ public class UpgradeWindow : MonoBehaviour
 
     }
 
-    public void HideMask()
-    {
-        _blockingMask.SetActive(false);
-    }
+    public void ShowMask() => gameObject.GetComponent<Button>().interactable = true;
 
+    public void HideMask() => gameObject.GetComponent<Button>().interactable = false;
 }

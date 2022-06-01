@@ -31,12 +31,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5291370077984027819}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 36.9, y: -11.299995}
-  m_SizeDelta: {x: -324.3051, y: -9.2}
+  m_AnchoredPosition: {x: 49.999985, y: 2.2999954}
+  m_SizeDelta: {x: -100.00003, y: -4.5999923}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4178631985714876566
 CanvasRenderer:
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +1
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b21992839a78e114a8cec265c52fbc00, type: 2}
   m_sharedMaterial: {fileID: 6498289321923831095, guid: b21992839a78e114a8cec265c52fbc00, type: 2}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -152,7 +152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &792136706871250660
 RectTransform:
   m_ObjectHideFlags: 0
@@ -245,8 +245,8 @@ RectTransform:
   m_Children:
   - {fileID: 5291370078301226683}
   - {fileID: 7774983225192535317}
-  - {fileID: 4515428263136070932}
   - {fileID: 2342377965636465738}
+  - {fileID: 4515428263136070932}
   - {fileID: 792136706871250660}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -400,9 +400,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.8000183, y: 13.4}
-  m_SizeDelta: {x: -176.8175, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0.86}
+  m_AnchoredPosition: {x: -14.999999, y: 3.4999962}
+  m_SizeDelta: {x: -30.000004, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5291370078301226681
 CanvasRenderer:
@@ -432,10 +432,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0413\u0430\u043D\u0442\u0435\u043B\u0438"
+  m_text: Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b21992839a78e114a8cec265c52fbc00, type: 2}
-  m_sharedMaterial: {fileID: 6498289321923831095, guid: b21992839a78e114a8cec265c52fbc00, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: aa4ff9adf33e0314b994b1509a718e6d, type: 2}
+  m_sharedMaterial: {fileID: 3591370626090856262, guid: aa4ff9adf33e0314b994b1509a718e6d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -466,7 +466,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -518,7 +518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7774983225192535317
 RectTransform:
   m_ObjectHideFlags: 0
@@ -608,12 +608,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5291370077984027819}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -47.9, y: -11.3}
-  m_SizeDelta: {x: -324.3051, y: -9.2}
+  m_AnchoredPosition: {x: 15, y: 2.3000107}
+  m_SizeDelta: {x: -30, y: -4.6000214}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7012167402401037654
 CanvasRenderer:
@@ -643,7 +643,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b21992839a78e114a8cec265c52fbc00, type: 2}
   m_sharedMaterial: {fileID: 6498289321923831095, guid: b21992839a78e114a8cec265c52fbc00, type: 2}
@@ -677,7 +677,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
