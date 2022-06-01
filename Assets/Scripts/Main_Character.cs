@@ -6,10 +6,10 @@ using TMPro;
 
 public class Main_Character : MonoBehaviour
 {
-    public TextMeshProUGUI BrutalityText;
+    public TMP_Text BrutalityText;
     public Slider sliderLV;
 
-    public int brutality;
+    public int brutality = 0;
     public float toNextLv = 50;
     public float realProgress = 0;
     public int level = 0;
@@ -23,9 +23,10 @@ public class Main_Character : MonoBehaviour
 
     void Start()
     {
-        brutality = 0;
-        BrutalityText = GetComponent<TextMeshProUGUI>();
+        // Тут подгрузка из json
+
         sliderLV.value = 0;
+        // Также исправил косяк с BrutalityText. В него зачем-то передавали компонент
     }
 
     void Update()
