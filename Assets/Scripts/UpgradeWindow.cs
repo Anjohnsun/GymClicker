@@ -10,7 +10,12 @@ public class UpgradeWindow : MonoBehaviour
     [SerializeField] private int _upgradeImprovement;
     [SerializeField] private int _levelRequired;
     [SerializeField] private int _improvementLevel;
-    [SerializeField] private TextMeshProUGUI name;
+    [SerializeField] private TextMeshProUGUI cost;
+    private int costCoef = 2;
+
+    [SerializeField] private Main_Character sportsman;
+    [SerializeField] private Manager_Script _gameManager;
+
     public UpgradeWindow(int upgradeCost, int upgradeImprovement, int levelRequired, int improvementLevel)
     {
         _upgradeCost = upgradeCost;
@@ -26,7 +31,25 @@ public class UpgradeWindow : MonoBehaviour
 
     public void BuyUpgrade()
     {
+        if (_gameManager.brutality >= _upgradeCost)
+        {
+            sportsman.boost += UpgradeImprovement;
+            _gameManager.brutality -= _upgradeCost;
+            _upgradeCost *= costCoef;
 
+            sportsman.RefreshBrutalityInfo();
+
+            cost.text = _upgradeCost.ToString();
+            Debug.Log("куплено!");
+        }
+        
+    }
+
+    private void Start()
+    {
+        //загрузка данных
+
+        cost.text = _upgradeCost.ToString();
     }
 
     public void ShowMask() => gameObject.GetComponent<Button>().interactable = true;

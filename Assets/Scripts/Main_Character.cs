@@ -13,7 +13,7 @@ public class Main_Character : MonoBehaviour
     public float toNextLv = 50;
     public float realProgress = 0;
     public int level = 0;
-    public int boost = 0;
+    public int boost = 1;
     public float coeffToNextLv = 2f;
 
     public int firstCost = 5;
@@ -21,6 +21,8 @@ public class Main_Character : MonoBehaviour
 
     [SerializeField] private Sprite sittingSprite;
     [SerializeField] private Sprite stayingSprite;
+
+    [SerializeField] Manager_Script _GameManager;
 
     void Start()
     {
@@ -31,7 +33,8 @@ public class Main_Character : MonoBehaviour
 
     public void Click()
     {
-        brutality += 1 + boost;
+        brutality += boost;
+        _GameManager.brutality = brutality;
         realProgress++;
 
         RefreshBrutalityInfo();
@@ -42,6 +45,8 @@ public class Main_Character : MonoBehaviour
         {
             transform.GetChild(0).GetComponent<Image>().sprite = sittingSprite;
         }
+
+        
     }
 
     public void LVLUp()
@@ -70,6 +75,8 @@ public class Main_Character : MonoBehaviour
 
     public void RefreshBrutalityInfo()
     {
+
+        brutality = _GameManager.brutality;
         stats.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = brutality.ToString();
 
         sliderLV.value = (realProgress / 100) * (100 / toNextLv);

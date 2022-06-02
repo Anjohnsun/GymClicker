@@ -5,15 +5,15 @@ using TMPro;
 
 public class Manager_Script : MonoBehaviour
 {
-    private int brutality;
-    private int clickEffectiveness;
-    private int level;
-    private int sliderValue;
+    public int brutality;
+    public int clickEffectiveness;
+    public int level;
+    public int sliderValue;
 
     [SerializeField] private List<UpgradeWindow> _heroUpgrades = new List<UpgradeWindow>();
 
-    private float soundVolume;
-    private float musicVolume;
+    public float soundVolume;
+    public float musicVolume;
 
     private void Start()
     {
