@@ -75,12 +75,9 @@ public class Main_Character : MonoBehaviour
 
     public void RefreshBrutalityInfo()
     {
-<<<<<<< HEAD
+
         brutality = _GameManager.brutality;
-        BrutalityText.text = brutality.ToString();
-=======
         stats.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = brutality.ToString();
->>>>>>> f7ecded2c23a1a8b869b5508c53537c8f89ac6c4
 
         sliderLV.value = (realProgress / 100) * (100 / toNextLv);
         if (realProgress >= toNextLv)
