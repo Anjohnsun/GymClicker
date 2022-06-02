@@ -138,6 +138,18 @@ PrefabInstance:
       propertyPath: sportsman
       value: 
       objectReference: {fileID: 1503549373}
+    - target: {fileID: 5291370077984027816, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2039939783}
+    - target: {fileID: 5291370077984027816, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291370077984027816, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5291370077984027818, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
       propertyPath: m_Name
       value: Button (3)
@@ -673,6 +685,26 @@ PrefabInstance:
       propertyPath: sportsman
       value: 
       objectReference: {fileID: 1503549373}
+    - target: {fileID: 5051250618375590103, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: _gameManager
+      value: 
+      objectReference: {fileID: 721390128}
+    - target: {fileID: 5051250618375590103, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: _upgradeCost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051250618375590103, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: _upgradeImprovement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291370077984027816, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1360085798}
+    - target: {fileID: 5291370077984027816, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5291370077984027818, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
       propertyPath: m_Name
       value: Button
@@ -1170,7 +1202,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5051250618375590103, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
 --- !u!224 &453662648 stripped
 RectTransform:
@@ -1276,7 +1309,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5051250618375590103, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
 --- !u!224 &532223153 stripped
 RectTransform:
@@ -1990,6 +2024,18 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5291370077984027816, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1039594882}
+    - target: {fileID: 5291370077984027816, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291370077984027816, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5291370077984027818, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
       propertyPath: m_Name
       value: Button (1)
@@ -2093,6 +2139,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5291370077984027819, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
   m_PrefabInstance: {fileID: 1039594880}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1039594882 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5051250618375590103, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+  m_PrefabInstance: {fileID: 1039594880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405cead18cc4259478387257dcff2d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1082471529
 GameObject:
   m_ObjectHideFlags: 0
@@ -2268,7 +2325,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5051250618375590103, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
 --- !u!224 &1238324946 stripped
 RectTransform:
@@ -2470,6 +2528,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1360085798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5291370077984027818, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+  m_PrefabInstance: {fileID: 238834993}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1467649938
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2485,6 +2548,18 @@ PrefabInstance:
       propertyPath: sportsman
       value: 
       objectReference: {fileID: 1503549373}
+    - target: {fileID: 5291370077984027816, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1739365324}
+    - target: {fileID: 5291370077984027816, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291370077984027816, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeWindow, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5291370077984027818, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
       propertyPath: m_Name
       value: Button (2)
@@ -2810,12 +2885,13 @@ MonoBehaviour:
   toNextLv: 50
   realProgress: 0
   level: 0
-  boost: 0
+  boost: 1
   coeffToNextLv: 2
   firstCost: 5
   secondCost: 15
   sittingSprite: {fileID: 21300000, guid: b302e63c05113b94daa6cd7a8e012a9e, type: 3}
   stayingSprite: {fileID: 21300000, guid: b24a7adab957bc946ae77d47967c6218, type: 3}
+  _GameManager: {fileID: 721390128}
 --- !u!1 &1670684744
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,13 +3138,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5051250618375590103, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
 --- !u!224 &1687281404 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5291370077984027819, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
   m_PrefabInstance: {fileID: 1687281403}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1739365324 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5051250618375590103, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+  m_PrefabInstance: {fileID: 1467649938}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405cead18cc4259478387257dcff2d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1905817069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3450,6 +3538,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1961316312}
   m_CullTransparentMesh: 1
+--- !u!114 &2039939783 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5051250618375590103, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+  m_PrefabInstance: {fileID: 3217328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405cead18cc4259478387257dcff2d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2104139218 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2009182397264314220, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}

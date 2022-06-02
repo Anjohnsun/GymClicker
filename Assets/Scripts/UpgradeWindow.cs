@@ -11,7 +11,7 @@ public class UpgradeWindow : MonoBehaviour
     [SerializeField] private int _levelRequired;
     [SerializeField] private int _improvementLevel;
     [SerializeField] private TextMeshProUGUI cost;
-    private int costCoef = 2;
+    [SerializeField] private int costCoef = 2;
 
     [SerializeField] private Main_Character sportsman;
     [SerializeField] private Manager_Script _gameManager;
