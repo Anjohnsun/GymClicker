@@ -6,7 +6,7 @@ using TMPro;
 
 public class Main_Character : MonoBehaviour
 {
-    public TMP_Text BrutalityText;
+    public GameObject stats;
     public Slider sliderLV;
 
     public int brutality = 0;
@@ -29,7 +29,6 @@ public class Main_Character : MonoBehaviour
         // Тут подгрузка из json
 
         sliderLV.value = 0;
-        // Также исправил косяк с BrutalityText. В него зачем-то передавали компонент
     }
 
     public void Click()
@@ -53,7 +52,7 @@ public class Main_Character : MonoBehaviour
     public void LVLUp()
     {
         level++;
-        toNextLv = toNextLv * coeffToNextLv;
+        toNextLv *= coeffToNextLv;
         realProgress = 0;
     }
 
@@ -76,11 +75,20 @@ public class Main_Character : MonoBehaviour
 
     public void RefreshBrutalityInfo()
     {
+<<<<<<< HEAD
         brutality = _GameManager.brutality;
         BrutalityText.text = brutality.ToString();
+=======
+        stats.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = brutality.ToString();
+>>>>>>> f7ecded2c23a1a8b869b5508c53537c8f89ac6c4
 
         sliderLV.value = (realProgress / 100) * (100 / toNextLv);
-        if (realProgress >= toNextLv) { LVLUp(); }
+        if (realProgress >= toNextLv)
+        {
+            LVLUp();
+            stats.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = level.ToString();
+            stats.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = (level+ 1).ToString();
+        }
     }
     
 }
