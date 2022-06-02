@@ -1935,6 +1935,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1483179869}
     m_Modifications:
+    - target: {fileID: 5291370077984027816, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5291370077984027818, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
       propertyPath: m_Name
       value: Button (1)
@@ -2733,7 +2737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116ecc73ca884884c9e0bfa877fc6c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BrutalityText: {fileID: 273400016}
+  stats: {fileID: 1905817069}
   sliderLV: {fileID: 1341457421}
   brutality: 0
   toNextLv: 50
