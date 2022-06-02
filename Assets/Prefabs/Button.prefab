@@ -366,7 +366,9 @@ MonoBehaviour:
   _upgradeImprovement: 0
   _levelRequired: 0
   _improvementLevel: 0
-  name: {fileID: 0}
+  cost: {fileID: 0}
+  sportsman: {fileID: 0}
+  _gameManager: {fileID: 0}
 --- !u!1 &5291370078301226682
 GameObject:
   m_ObjectHideFlags: 0

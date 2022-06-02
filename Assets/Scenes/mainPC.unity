@@ -1978,7 +1978,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1483179869}
     m_Modifications:
-<<<<<<< HEAD
     - target: {fileID: 5051250618375590103, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
       propertyPath: cost
       value: 
@@ -1987,12 +1986,10 @@ PrefabInstance:
       propertyPath: sportsman
       value: 
       objectReference: {fileID: 1503549373}
-=======
     - target: {fileID: 5291370077984027816, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
       propertyPath: m_Interactable
       value: 1
       objectReference: {fileID: 0}
->>>>>>> f7ecded2c23a1a8b869b5508c53537c8f89ac6c4
     - target: {fileID: 5291370077984027818, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
       propertyPath: m_Name
       value: Button (1)
