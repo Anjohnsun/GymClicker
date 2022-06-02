@@ -8,6 +8,7 @@ public class Manager_Script : MonoBehaviour
     private int brutality;
     private int clickEffectiveness;
     private int level;
+    private int sliderValue;
 
     [SerializeField] private List<UpgradeWindow> _heroUpgrades = new List<UpgradeWindow>();
 

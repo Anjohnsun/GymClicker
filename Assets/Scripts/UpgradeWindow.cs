@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class UpgradeWindow : MonoBehaviour
     [SerializeField] private int _upgradeImprovement;
     [SerializeField] private int _levelRequired;
     [SerializeField] private int _improvementLevel;
+    [SerializeField] private TextMeshProUGUI name;
     public UpgradeWindow(int upgradeCost, int upgradeImprovement, int levelRequired, int improvementLevel)
     {
         _upgradeCost = upgradeCost;

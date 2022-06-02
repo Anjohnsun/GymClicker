@@ -14,12 +14,13 @@ public class Main_Character : MonoBehaviour
     public float realProgress = 0;
     public int level = 0;
     public int boost = 0;
-    public float coeffToNextLv = 1.2f;
+    public float coeffToNextLv = 2f;
 
     public int firstCost = 5;
     public int secondCost = 15;
-    
 
+    [SerializeField] private Sprite sittingSprite;
+    [SerializeField] private Sprite stayingSprite;
 
     void Start()
     {
@@ -29,22 +30,22 @@ public class Main_Character : MonoBehaviour
         // Также исправил косяк с BrutalityText. В него зачем-то передавали компонент
     }
 
-    void Update()
-    {
-        BrutalityText.text = brutality.ToString();
-
-        sliderLV.value = (realProgress / 100) * (100 / toNextLv);
-        if (realProgress >= toNextLv) { LVUp(); }
-        
-    }
-
     public void Click()
     {
         brutality += 1 + boost;
         realProgress++;
+
+        RefreshBrutalityInfo();
+        if (transform.GetChild(0).GetComponent<Image>().sprite == sittingSprite)
+        {
+            transform.GetChild(0).GetComponent<Image>().sprite = stayingSprite;
+        } else
+        {
+            transform.GetChild(0).GetComponent<Image>().sprite = sittingSprite;
+        }
     }
 
-    public void LVUp()
+    public void LVLUp()
     {
         level++;
         toNextLv = toNextLv * coeffToNextLv;
@@ -68,6 +69,12 @@ public class Main_Character : MonoBehaviour
         }
     }
 
+    public void RefreshBrutalityInfo()
+    {
+        BrutalityText.text = brutality.ToString();
 
+        sliderLV.value = (realProgress / 100) * (100 / toNextLv);
+        if (realProgress >= toNextLv) { LVLUp(); }
+    }
     
 }
