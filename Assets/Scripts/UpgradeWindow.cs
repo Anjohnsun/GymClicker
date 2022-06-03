@@ -45,6 +45,7 @@ public class UpgradeWindow : MonoBehaviour
             Debug.Log("куплено!");
 
             _improvementLevel++;
+            lvlImprovement.text = _improvementLevel.ToString();
         }
 
     }
@@ -57,7 +58,7 @@ public class UpgradeWindow : MonoBehaviour
         //загрузка данных
 
         cost.text = _upgradeCost.ToString();
-        if (_levelRequired < _gameManager._level)
+        if (_levelRequired > _gameManager._level)
         {
             HideMask();
         } else
@@ -68,9 +69,9 @@ public class UpgradeWindow : MonoBehaviour
         _gameManager.LevelUpdate(_gameManager._level);
     }
 
-    public void ShowMask() => gameObject.GetComponent<Button>().interactable = true;
+    public void ShowMask() => transform.GetComponent<Button>().interactable = true;
 
-    public void HideMask() => gameObject.GetComponent<Button>().interactable = false;
+    public void HideMask() => transform.GetComponent<Button>().interactable = false;
 
     private void CheckLevel(int level)
     {
