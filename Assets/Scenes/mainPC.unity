@@ -722,15 +722,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2009182397264314220, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
       propertyPath: m_fontSize
-      value: 24
+      value: 26.05
       objectReference: {fileID: 0}
     - target: {fileID: 2009182397264314220, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
       propertyPath: m_margin.x
       value: 0.8606415
-      objectReference: {fileID: 0}
-    - target: {fileID: 2009182397264314220, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2009182397264314220, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
       propertyPath: m_HorizontalAlignment
