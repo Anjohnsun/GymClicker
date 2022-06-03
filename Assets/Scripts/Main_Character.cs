@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
-public class Main_Character : MonoBehaviour
+public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public GameObject stats;
-    public Slider sliderLV;
+    public Image sliderLV;
 
     public int brutality = 0;
     public float toNextLv = 50;
@@ -28,25 +29,21 @@ public class Main_Character : MonoBehaviour
     {
         // Тут подгрузка из json
 
-        sliderLV.value = 0;
+        sliderLV.fillAmount = 0;
     }
 
-    public void Click()
+    public void OnPointerDown(PointerEventData eventData)
     {
         brutality += boost;
         _GameManager.brutality = brutality;
         realProgress++;
-
         RefreshBrutalityInfo();
-        if (transform.GetChild(0).GetComponent<Image>().sprite == sittingSprite)
-        {
-            transform.GetChild(0).GetComponent<Image>().sprite = stayingSprite;
-        } else
-        {
-            transform.GetChild(0).GetComponent<Image>().sprite = sittingSprite;
-        }
+        transform.GetChild(0).GetComponent<Image>().sprite = sittingSprite;
+    }
 
-        
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        transform.GetChild(0).GetComponent<Image>().sprite = stayingSprite;
     }
 
     public void LVLUp()
@@ -80,7 +77,7 @@ public class Main_Character : MonoBehaviour
         brutality = _GameManager.brutality;
         stats.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = brutality.ToString();
 
-        sliderLV.value = (realProgress / 100) * (100 / toNextLv);
+        sliderLV.fillAmount = (realProgress / 100) * (100 / toNextLv);
         if (realProgress >= toNextLv)
         {
             LVLUp();

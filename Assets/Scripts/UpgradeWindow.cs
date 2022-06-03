@@ -49,23 +49,18 @@ public class UpgradeWindow : MonoBehaviour
         }
 
     }
-
-
     
     private void Start()
     {
         _gameManager._levelUpdater.AddListener(CheckLevel);
         //загрузка данных
 
+        lockImage.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = _levelRequired.ToString();
         cost.text = _upgradeCost.ToString();
         if (_levelRequired > _gameManager._level)
         {
             HideMask();
-        } else
-        {
-            _gameManager.LevelUpdate(_gameManager._level);
         }
-
         _gameManager.LevelUpdate(_gameManager._level);
     }
 
