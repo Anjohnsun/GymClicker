@@ -2001,6 +2001,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1483179869}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 5051250618375590103, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
       propertyPath: cost
       value: 
@@ -2037,6 +2038,8 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+=======
+>>>>>>> 126bb3068735f538de15895bd8c3b0032ce22400
     - target: {fileID: 5291370077984027819, guid: d748e1f0bcee0ad44a1e90a63dbb9c7d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2812,8 +2815,11 @@ MonoBehaviour:
   secondCost: 15
   sittingSprite: {fileID: 21300000, guid: b302e63c05113b94daa6cd7a8e012a9e, type: 3}
   stayingSprite: {fileID: 21300000, guid: b24a7adab957bc946ae77d47967c6218, type: 3}
+<<<<<<< HEAD
   _GameManager: {fileID: 721390128}
+=======
   _GameManager: {fileID: 0}
+>>>>>>> 126bb3068735f538de15895bd8c3b0032ce22400
 --- !u!1 &1670684744
 GameObject:
   m_ObjectHideFlags: 0
