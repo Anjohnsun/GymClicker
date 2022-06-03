@@ -54,6 +54,7 @@ public class Main_Character : MonoBehaviour
         level++;
         toNextLv *= coeffToNextLv;
         realProgress = 0;
+        _GameManager.LevelUpdate(level);
     }
 
     public void BuyFirst()
@@ -86,6 +87,5 @@ public class Main_Character : MonoBehaviour
             stats.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = level.ToString();
             stats.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = (level+ 1).ToString();
         }
-        Debug.Log("Refreshing");
     }
 }

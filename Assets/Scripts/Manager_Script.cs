@@ -25,8 +25,8 @@ public class Manager_Script : MonoBehaviour
 
     public void LevelUpdate(int level)
     {
-        _level = level;
         _levelUpdater.Invoke(level);
+        Debug.Log("LevelUpdated");
     }
 }
 
