@@ -8,7 +8,7 @@ public class UpgradeWindow : MonoBehaviour
 {
     [SerializeField] private int _upgradeCost;
     [SerializeField] private int _upgradeImprovement;
-    [SerializeField] private TextMeshProUGUI lvlRequired;
+    [SerializeField] private GameObject lockImage;
     [SerializeField] private int _levelRequired;
     [SerializeField] private TextMeshProUGUI lvlImprovement;
     [SerializeField] private int _improvementLevel;
@@ -43,18 +43,43 @@ public class UpgradeWindow : MonoBehaviour
 
             cost.text = _upgradeCost.ToString();
             Debug.Log("куплено!");
+
+            _improvementLevel++;
         }
-        
+
     }
 
+
+    
     private void Start()
     {
+        _gameManager._levelUpdater.AddListener(CheckLevel);
         //загрузка данных
 
         cost.text = _upgradeCost.ToString();
+        if (_levelRequired < _gameManager._level)
+        {
+            HideMask();
+        } else
+        {
+            _gameManager.LevelUpdate(_gameManager._level);
+        }
+
+        _gameManager.LevelUpdate(_gameManager._level);
     }
 
     public void ShowMask() => gameObject.GetComponent<Button>().interactable = true;
 
     public void HideMask() => gameObject.GetComponent<Button>().interactable = false;
+
+    private void CheckLevel(int level)
+    {
+        if(level >= _levelRequired)
+        {
+            lockImage.SetActive(false);
+            ShowMask();
+            Debug.LogWarning(level + "   " + _levelRequired + "   " + _upgradeCost);
+        }
+    }
+
 }
