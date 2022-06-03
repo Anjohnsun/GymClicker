@@ -8,7 +8,9 @@ public class UpgradeWindow : MonoBehaviour
 {
     [SerializeField] private int _upgradeCost;
     [SerializeField] private int _upgradeImprovement;
+    [SerializeField] private TextMeshProUGUI lvlRequired;
     [SerializeField] private int _levelRequired;
+    [SerializeField] private TextMeshProUGUI lvlImprovement;
     [SerializeField] private int _improvementLevel;
     [SerializeField] private TextMeshProUGUI cost;
     [SerializeField] private int costCoef = 2;
