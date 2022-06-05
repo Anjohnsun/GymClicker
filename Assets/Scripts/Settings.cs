@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Settings : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private bool _isHiden = true;
+
     void Start()
     {
         
@@ -18,7 +19,14 @@ public class Settings : MonoBehaviour
 
     public void InvokeSettings()
     {
-        if (gameObject.transform.position.y < 60) LeanTween.moveY(gameObject, -619, 0.6f).setEaseInOutCirc();
-        else LeanTween.moveY(gameObject, 619, 0.6f).setEaseInOutCirc();
+        if (_isHiden)
+        {
+            LeanTweenExt.LeanMoveLocalY(gameObject, 0, 0.8f);
+            _isHiden = false;
+        } else
+        {
+            LeanTweenExt.LeanMoveLocalY(gameObject, 608, 0.8f);
+            _isHiden = true;
+        }
     }
 }
