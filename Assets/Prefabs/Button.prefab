@@ -663,6 +663,13 @@ MonoBehaviour:
   costCoef: 0
   sportsman: {fileID: 0}
   _gameManager: {fileID: 0}
+  AudioSounds: {fileID: 0}
+  AudioSoundsList:
+  - {fileID: 8300000, guid: a66e9a82af2eb4643a8d38081db8f605, type: 3}
+  - {fileID: 8300000, guid: dedf5e45d67cd054295caa1ea9723736, type: 3}
+  - {fileID: 8300000, guid: 281e456ae523a3242972cbc19e55ebd9, type: 3}
+  - {fileID: 8300000, guid: b96764ce88dc4e2439f25d079c339c91, type: 3}
+  - {fileID: 8300000, guid: 895091c4408fee44bbe0672740dbd73c, type: 3}
 --- !u!1 &5291370078301226682
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,7 +918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.08102417, y: 0}
+  m_AnchoredPosition: {x: 0.08105469, y: 0}
   m_SizeDelta: {x: -0.16192627, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9058790462285163547

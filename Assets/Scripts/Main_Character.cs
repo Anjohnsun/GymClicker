@@ -25,6 +25,12 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     [SerializeField] Manager_Script _GameManager;
 
+    // Audio
+    [SerializeField] private AudioSource AudioMusic;
+    [SerializeField] private List<AudioClip> AudioMusicList;
+    [SerializeField] private AudioSource AudioMoans;
+    [SerializeField] private List<AudioClip> AudioMoansList;
+
     void Start()
     {
         // Тут подгрузка из json
@@ -34,6 +40,7 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        AudioMoans.PlayOneShot(AudioMoansList[Random.Range(0, AudioMoansList.Count - 1)]);
         brutality += boost;
         _GameManager.brutality = brutality;
         realProgress++;

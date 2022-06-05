@@ -18,7 +18,7 @@ public class Settings : MonoBehaviour
 
     public void InvokeSettings()
     {
-       // LeanTween.moveY(gameObject, 450, 0.8f);
-        LeanTweenExt.LeanMoveLocalY(gameObject, 0, 0.8f);
+        if (gameObject.transform.position.y < 60) LeanTween.moveY(gameObject, -619, 0.6f).setEaseInOutCirc();
+        else LeanTween.moveY(gameObject, 619, 0.6f).setEaseInOutCirc();
     }
 }
