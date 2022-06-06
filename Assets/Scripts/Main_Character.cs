@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.Audio;
 using TMPro;
 
 public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
@@ -25,11 +26,16 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     [SerializeField] Manager_Script _GameManager;
 
+    [SerializeField] GameObject Background;
+    [SerializeField] Sprite BGcartoon;
+    [SerializeField] Sprite BGrtx;
+
     // Audio
     [SerializeField] private AudioSource AudioMusic;
     [SerializeField] private List<AudioClip> AudioMusicList;
     [SerializeField] private AudioSource AudioMoans;
     [SerializeField] private List<AudioClip> AudioMoansList;
+    [SerializeField] private AudioMixer Mixer;
 
     //other sportsmen
     [SerializeField] private GameObject sportsman1;
@@ -62,6 +68,8 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public void OnPointerUp(PointerEventData eventData)
     {
         transform.GetChild(0).GetComponent<Image>().sprite = stayingSprite;
+        if (AudioMusic.isPlaying) return;
+        AudioMusic.PlayOneShot(AudioMusicList[Random.Range(0, AudioMusicList.Count - 1)]);
     }
 
     public void LVLUp()
@@ -104,6 +112,7 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         }
     }
 
+<<<<<<< HEAD
 
     public void MakeSportsman1Active()
     {
@@ -114,5 +123,27 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     {
         _GameManager._sportsman2IsActive = true;
         sportsman2.SetActive(true);
+=======
+    public void ToggleRTX(bool isToggle)
+    {
+        if (isToggle) Background.GetComponent<Image>().sprite = BGrtx;
+        else Background.GetComponent<Image>().sprite = BGcartoon;
+    }
+    public void OnVolumeMaster(float vol)
+    {
+        Mixer.SetFloat("MasterVolume", Mathf.Log10(vol) * 20);
+    }
+    public void OnVolumeMusic(float vol)
+    {
+        Mixer.SetFloat("MusicVolume", Mathf.Log10(vol) * 20);
+    }
+    public void OnVolumeSounds(float vol)
+    {
+        Mixer.SetFloat("SoundsVolume", Mathf.Log10(vol) * 20);
+    }
+    public void OnVolumeMoans(float vol)
+    {
+        Mixer.SetFloat("MoansVolume", Mathf.Log10(vol) * 20);
+>>>>>>> 17cff2ee3b0bcf96bfd668b759c76ce605dc2716
     }
 }

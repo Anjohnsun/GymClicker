@@ -57,7 +57,6 @@ public class UpgradeWindow : MonoBehaviour
             LeanTween.moveLocalX(gameObject, -30f, 0.1f).setDelay(0.05f);
             LeanTween.moveLocalX(gameObject, 0f, 0.05f).setDelay(0.15f);
         }
-
     }
     
     private void Start()
@@ -84,7 +83,7 @@ public class UpgradeWindow : MonoBehaviour
         {
             lockImage.SetActive(false);
             ShowMask();
-            Debug.LogWarning(level + "   " + _levelRequired + "   " + _upgradeCost);
+            // Debug.LogWarning(level + "   " + _levelRequired + "   " + _upgradeCost);
         }
     }
 
