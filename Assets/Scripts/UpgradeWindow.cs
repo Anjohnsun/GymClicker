@@ -53,7 +53,6 @@ public class UpgradeWindow : MonoBehaviour
             _improvementLevel++;
             lvlImprovement.text = _improvementLevel.ToString();
         }
-
     }
     
     private void Start()
@@ -80,7 +79,7 @@ public class UpgradeWindow : MonoBehaviour
         {
             lockImage.SetActive(false);
             ShowMask();
-            Debug.LogWarning(level + "   " + _levelRequired + "   " + _upgradeCost);
+            // Debug.LogWarning(level + "   " + _levelRequired + "   " + _upgradeCost);
         }
     }
 
