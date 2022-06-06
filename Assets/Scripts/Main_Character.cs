@@ -53,7 +53,7 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     void Start()
     {
-        // Тут подгрузка из json
+        // ??? ????????? ?? json
 
         sliderLV.fillAmount = 0;
     }
@@ -81,7 +81,7 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             }
         }
         if (AudioMusic.isPlaying || musicHasntPlayed) return;
-        AudioMusic.PlayOneShot(AudioMusicList[Random.Range(0, AudioMusicList.Count - 1)]);
+        AudioMusic.PlayOneShot(AudioMusicList[Random.Range(0, AudioMusicList.Count)]);
 
     }
 
