@@ -48,10 +48,14 @@ public class UpgradeWindow : MonoBehaviour
             sportsman.RefreshBrutalityInfo();
 
             cost.text = _upgradeCost.ToString();
-            Debug.Log("куплено!");
 
             _improvementLevel++;
             lvlImprovement.text = _improvementLevel.ToString();
+        } else
+        {
+            LeanTween.moveLocalX(gameObject, 30f, 0.05f);
+            LeanTween.moveLocalX(gameObject, -30f, 0.1f).setDelay(0.05f);
+            LeanTween.moveLocalX(gameObject, 0f, 0.05f).setDelay(0.15f);
         }
     }
     

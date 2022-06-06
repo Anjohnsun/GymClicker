@@ -21,11 +21,11 @@ public class Settings : MonoBehaviour
     {
         if (_isHiden)
         {
-            LeanTweenExt.LeanMoveLocalY(gameObject, 0, 0.8f);
+            LeanTweenExt.LeanMoveLocalY(gameObject, 0, 1.2f).setEaseOutElastic();
             _isHiden = false;
         } else
         {
-            LeanTweenExt.LeanMoveLocalY(gameObject, 608, 0.8f);
+            LeanTweenExt.LeanMoveLocalY(gameObject, 608, 0.8f).setEaseOutBounce();
             _isHiden = true;
         }
     }
