@@ -21,6 +21,8 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public int firstCost = 5;
     public int secondCost = 15;
 
+    private bool musicHasntPlayed = true;
+
     [SerializeField] private Sprite sittingSprite;
     [SerializeField] private Sprite stayingSprite;
 
@@ -40,8 +42,14 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     //other sportsmen
     [SerializeField] private GameObject sportsman1;
     [SerializeField] private GameObject sportsman2;
-    [SerializeField] private Slider sportsman1Slider;
-    [SerializeField] private Slider sportsman2Slider;
+    [SerializeField] private Image sportsman1Slider;
+    [SerializeField] private Image sportsman2Slider;
+    [SerializeField] private GameObject sp1Mask;
+    [SerializeField] private GameObject sp2Mask;
+    public int _sportsmenBoost = 1;
+
+    [SerializeField] private Sprite _handsDown;
+    [SerializeField] private Sprite _handsUp;
 
     void Start()
     {
@@ -52,24 +60,68 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     private void FixedUpdate()
     {
-        
+        if (_GameManager._sportsman1IsActive)
+        {
+            sportsman1Slider.fillAmount += Time.fixedDeltaTime / 5;
+            if (sportsman1Slider.fillAmount == 1)
+            {
+                sportsman1Slider.fillAmount = 0;
+                brutality += _sportsmenBoost;
+                RefreshBrutalityInfo();
+            }
+        }
+        if (_GameManager._sportsman2IsActive)
+        {
+            sportsman2Slider.fillAmount += Time.fixedDeltaTime / 5;
+            if (sportsman2Slider.fillAmount == 1)
+            {
+                sportsman2Slider.fillAmount = 0;
+                brutality += _sportsmenBoost;
+                RefreshBrutalityInfo();
+            }
+        }
+        if (AudioMusic.isPlaying || musicHasntPlayed) return;
+        AudioMusic.PlayOneShot(AudioMusicList[Random.Range(0, AudioMusicList.Count - 1)]);
+
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        AudioMoans.PlayOneShot(AudioMoansList[Random.Range(0, AudioMoansList.Count - 1)]);
+        AudioMoans.PlayOneShot(AudioMoansList[Random.Range(0, AudioMoansList.Count)]);
         brutality += boost;
         _GameManager.brutality = brutality;
         realProgress++;
         RefreshBrutalityInfo();
         transform.GetChild(0).GetComponent<Image>().sprite = sittingSprite;
+        musicHasntPlayed = false;
+        if (_GameManager._sportsman1IsActive)
+        {
+            if (sportsman1.GetComponent<Image>().sprite == _handsDown)
+            {
+                sportsman1.GetComponent<Image>().sprite = _handsUp;
+            }
+            else
+            {
+                sportsman1.GetComponent<Image>().sprite = _handsDown;
+            }
+        }
+        if (_GameManager._sportsman2IsActive)
+        {
+            if (sportsman2.GetComponent<Image>().sprite == _handsDown)
+            {
+                sportsman2.GetComponent<Image>().sprite = _handsUp;
+            }
+            else
+            {
+                sportsman2.GetComponent<Image>().sprite = _handsDown;
+            }
+        }
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         transform.GetChild(0).GetComponent<Image>().sprite = stayingSprite;
-        if (AudioMusic.isPlaying) return;
-        AudioMusic.PlayOneShot(AudioMusicList[Random.Range(0, AudioMusicList.Count - 1)]);
+
     }
 
     public void LVLUp()
@@ -99,8 +151,6 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     public void RefreshBrutalityInfo()
     {
-
-        brutality = _GameManager.brutality;
         stats.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = brutality.ToString();
 
         sliderLV.fillAmount = (realProgress / 100) * (100 / toNextLv);
@@ -108,27 +158,38 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
         {
             LVLUp();
             stats.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = level.ToString();
-            stats.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = (level+ 1).ToString();
+            stats.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = (level + 1).ToString();
         }
     }
 
-<<<<<<< HEAD
-
     public void MakeSportsman1Active()
     {
-        _GameManager._sportsman1IsActive = true;
-        sportsman1.SetActive(true);
+        if (brutality >= 2000 && !_GameManager._sportsman1IsActive)
+        {
+            _GameManager._sportsman1IsActive = true;
+            sportsman1.SetActive(true);
+            brutality -= 2000;
+            RefreshBrutalityInfo();
+            sp1Mask.SetActive(false);
+        }
     }
     public void MakeSportsman2Active()
     {
-        _GameManager._sportsman2IsActive = true;
-        sportsman2.SetActive(true);
-=======
+        if (brutality >= 4000 && !_GameManager._sportsman2IsActive)
+        {
+            _GameManager._sportsman2IsActive = true;
+            sportsman2.SetActive(true);
+            brutality -= 4000;
+            RefreshBrutalityInfo();
+            sp2Mask.SetActive(false);
+        }
+    }
     public void ToggleRTX(bool isToggle)
     {
         if (isToggle) Background.GetComponent<Image>().sprite = BGrtx;
         else Background.GetComponent<Image>().sprite = BGcartoon;
     }
+
     public void OnVolumeMaster(float vol)
     {
         Mixer.SetFloat("MasterVolume", Mathf.Log10(vol) * 20);
@@ -144,6 +205,5 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public void OnVolumeMoans(float vol)
     {
         Mixer.SetFloat("MoansVolume", Mathf.Log10(vol) * 20);
->>>>>>> 17cff2ee3b0bcf96bfd668b759c76ce605dc2716
     }
 }

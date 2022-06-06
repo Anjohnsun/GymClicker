@@ -22,14 +22,6 @@ public class UpgradeWindow : MonoBehaviour
     [SerializeField] private AudioSource AudioSounds;
     [SerializeField] private List<AudioClip> AudioSoundsList;
 
-    public UpgradeWindow(int upgradeCost, int upgradeImprovement, int levelRequired, int improvementLevel)
-    {
-        _upgradeCost = upgradeCost;
-        _upgradeImprovement = upgradeImprovement;
-        _levelRequired = levelRequired;
-        _improvementLevel = improvementLevel;
-    }
-
     public int UpgradeCost { get => _upgradeCost; }
     public int UpgradeImprovement { get => _upgradeImprovement; }
     public int LevelRequired { get => _levelRequired; }
@@ -37,12 +29,12 @@ public class UpgradeWindow : MonoBehaviour
 
     public void BuyUpgrade()
     {
-        if (_gameManager.brutality >= _upgradeCost)
+        if (sportsman.brutality >= _upgradeCost)
         {
             AudioSounds.PlayOneShot(AudioSoundsList[Random.Range(0,AudioSoundsList.Count - 1)]);
 
             sportsman.boost += UpgradeImprovement;
-            _gameManager.brutality -= _upgradeCost;
+            sportsman.brutality -= _upgradeCost;
             _upgradeCost *= costCoef;
 
             sportsman.RefreshBrutalityInfo();
