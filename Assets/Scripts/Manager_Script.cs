@@ -18,6 +18,9 @@ public class Manager_Script : MonoBehaviour
 
     public UnityEvent<int> _levelUpdater = new UnityEvent<int>();
 
+    public bool _sportsman1IsActive = false;
+    public bool _sportsman2IsActive = false;
+
     private void Start()
     {
         //загрузить данные из файла

@@ -31,11 +31,22 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     [SerializeField] private AudioSource AudioMoans;
     [SerializeField] private List<AudioClip> AudioMoansList;
 
+    //other sportsmen
+    [SerializeField] private GameObject sportsman1;
+    [SerializeField] private GameObject sportsman2;
+    [SerializeField] private Slider sportsman1Slider;
+    [SerializeField] private Slider sportsman2Slider;
+
     void Start()
     {
         // Тут подгрузка из json
 
         sliderLV.fillAmount = 0;
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -91,5 +102,17 @@ public class Main_Character : MonoBehaviour, IPointerDownHandler, IPointerUpHand
             stats.transform.GetChild(4).GetComponent<TextMeshProUGUI>().text = level.ToString();
             stats.transform.GetChild(6).GetComponent<TextMeshProUGUI>().text = (level+ 1).ToString();
         }
+    }
+
+
+    public void MakeSportsman1Active()
+    {
+        _GameManager._sportsman1IsActive = true;
+        sportsman1.SetActive(true);
+    }
+    public void MakeSportsman2Active()
+    {
+        _GameManager._sportsman2IsActive = true;
+        sportsman2.SetActive(true);
     }
 }
